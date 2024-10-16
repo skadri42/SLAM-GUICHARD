@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Samy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #003366; /* Fond bleu par défaut */
+            color: #fff;
+            transition: background-color 0.3s; /* Transition pour le changement de couleur de fond */
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #000; /* Couleur noire */
+        }
+        .cv-title {
+            color: #000; /* Couleur noire */
+            font-size: 2em; /* Taille augmentée */
+            margin: 10px 0;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .icon {
+            border-radius: 50%;
+            padding: 10px;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 1.5em; /* Taille des icônes */
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'animation */
+        }
+        .icon:hover {
+            transform: translateY(-5px) scale(1.1); /* Déplacement et agrandissement au survol */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Ombre au survol */
+        }
+        .profil { background-color: #ffcc00; } /* Jaune */
+        .experiences { background-color: #ff6699; } /* Rose */
+        .formations { background-color: #66ccff; } /* Bleu clair */
+        .competences { background-color: #99cc66; } /* Vert */
+        .interets { background-color: #ffcc66; } /* Jaune clair */
+
+        .section {
+            margin-bottom: 20px;
+            display: none; /* Masquer les sections par défaut */
+        }
+        .section.active {
+            display: block; /* Afficher la section active */
+        }
+        .section h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            color: #003366; /* Couleur des titres */
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .section h2 {
+                font-size: 1.25em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CV Samy</h1>
+            <div class="cv-title">CV de Samy</div> <!-- Titre modifié ici -->
+            <div class="icon-container">
+                <div class="icon profil" onclick="showSection('profil', '#ffcc00')">
+                    <i class="fas fa-user"></i> <br> Profil
+                </div>
+                <div class="icon experiences" onclick="showSection('experiences', '#ff6699')">
+                    <i class="fas fa-briefcase"></i> <br> Expériences
+                </div>
+                <div class="icon formations" onclick="showSection('formations', '#66ccff')">
+                    <i class="fas fa-graduation-cap"></i> <br> Formations
+                </div>
+                <div class="icon competences" onclick="showSection('competences', '#99cc66')">
+                    <i class="fas fa-cogs"></i> <br> Compétences
+                </div>
+                <div class="icon interets" onclick="showSection('interets', '#ffcc66')">
+                    <i class="fas fa-heart"></i> <br> Intérêts
+                </div>
+            </div>
+        </header>
+
+        <section class="section active" id="profil">
+            <h2>Profil</h2>
+            <p>Développeur passionné avec une expérience en développement de sites web et de logiciels. Compétent en HTML, CSS, JavaScript et C#.</p>
+        </section>
+
+        <section class="section" id="experiences">
+            <h2>Expériences professionnelles</h2>
+            <ul>
+                <li>
+                    <strong>Développeur Web</strong> - Nom de l'entreprise (Janv 2023 - Présent)<br>
+                    Développement de sites web responsives en utilisant HTML, CSS et JavaScript. Collaboration avec des équipes pour optimiser les performances des sites.
+                </li>
+                <li>
+                    <strong>Stagiaire Développeur</strong> - Nom de l'entreprise (Juin 2022 - Déc 2022)<br>
+                    A aidé à développer une application de gestion interne avec C# et PostgreSQL. Participation à la maintenance et aux tests.
+                </li>
+            </ul>
+        </section>
+
+        <section class="section" id="formations">
+            <h2>Diplômes et Formations</h2>
+            <ul>
+                <li>
+                    <strong>Licence en Informatique</strong> - Université de XYZ (2022)<br>
+                    Spécialisation en développement web et bases de données.
+                </li>
+                <li>
+                    <strong>Baccalauréat Scientifique</strong> - Lycée ABC (2019)<br>
+                    Mention Bien, avec un intérêt particulier pour les mathématiques et l'informatique.
+                </li>
+            </ul>
+        </section>
+
+        <section class="section" id="competences">
+            <h2>Compétences</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>C#, Python</li>
+                <li>PostgreSQL, MySQL</li>
+                <li>Git, Agile/Scrum</li>
+            </ul>
+        </section>
+
+        <section class="section" id="interets">
+            <h2>Centres d'intérêt</h2>
+            <p>Voyage, Musique, Lecture, Sports, Technologie.</p>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId, color) {
+            // Masquer toutes les sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Afficher la section sélectionnée
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+
+            // Changer la couleur de fond
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
